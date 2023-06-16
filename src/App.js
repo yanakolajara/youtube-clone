@@ -1,10 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import {Home} from './pages/Home.js'
-import {Videos} from './pages/Videos.js'
+import { Link } from 'react-router-dom';
+import {Home} from './Home.js'
+import { Videos } from './Videos';
+import { About } from './About';
 
 function App() {
+console.log(process.env)
   return (
     <> 
     <header>
@@ -24,10 +26,19 @@ function App() {
         value="Search..."
         />
       </form>
+      <div id="headerButtons">
+        <button class="headerButton">
+          <Link to="/">Home</Link>
+        </button>
+        <button class="headerButton">
+          <Link to="/about">About</Link>
+        </button>
+      </div>
     </header>
     <Routes>
       <Route path="/" element={<Home/>}/>
-      <Route path="/videos/*" element={<Videos/>}/>
+      <Route path="/videos/" element={<Videos/>}/>
+      <Route path="/about/" element={<About/>}/>
     </Routes>
     </>
   );

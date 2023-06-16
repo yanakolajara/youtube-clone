@@ -1,6 +1,7 @@
-export function Home(){
+export function About(){
     return(
         <>
+            
         </>
     )
 }
