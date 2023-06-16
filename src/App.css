@@ -1,38 +1,42 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+body{
+  background-color: rgb(16, 16, 16);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+/** Youtube header*/
+header{
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  align-items: center;
+  height: 35px;
+  padding: 10px 0px 10px 0px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.youtube-header{
+  grid-column: 1/2;
+  margin-left: 20px;
+  width: 150px;
+}
+/* Search Box */
+#searchBoxForm {
+  display: flex;
+  justify-content: center;
+  grid-column: 2/3;
+  width: 100%;
+}
+#searchBox{
+  background-color: rgb(18, 18, 18);
+  border: 1px solid rgb(48,48,48);
+  border-radius: 25px 0px 0px 25px;
+  width: 30%;
+  height: 35px;
+}
+#searchButton{
+  background-color: rgb(34, 34, 34);
+  border: 1px solid rgb(48,48,48);
+  border-radius: 0px 25px 25px 0px;
+  width: 10%;
+  color: white;
+  font-size: 1.5em;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: bold;
 }
