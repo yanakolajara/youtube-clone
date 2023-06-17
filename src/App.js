@@ -6,15 +6,10 @@ import { Videos } from './Videos';
 import { About } from './About';
 
 function App() {
-console.log(process.env)
   return (
     <> 
     <header>
-      <img
-      class="youtube-header"
-      src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/YouTube_dark_logo_2017.svg/1280px-YouTube_dark_logo_2017.svg.png"
-      onClick={() => console.log("Back to menu")}
-      />
+      <img class="youtube-header" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/YouTube_dark_logo_2017.svg/1280px-YouTube_dark_logo_2017.svg.png"/>
       <form id="searchBoxForm">
         <input
         type="text"
@@ -37,7 +32,8 @@ console.log(process.env)
     </header>
     <Routes>
       <Route path="/" element={<Home/>}/>
-      <Route path="/videos/" element={<Videos/>}/>
+      <Route path="/videos/:id" element={<Videos/>}/>
+      <Route path="/videos/*" element={<Videos/>}/>
       <Route path="/about/" element={<About/>}/>
     </Routes>
     </>

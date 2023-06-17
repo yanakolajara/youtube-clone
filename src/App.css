@@ -1,11 +1,7 @@
 body{
   background-color: rgb(16, 16, 16);
-  font-family: 'roboto';
+  font-family: Arial, Helvetica, sans-serif;
   color: white;
-}
-@font-face {
-  font-family: roboto;
-  src: url('./fonts/roboto/Roboto-Light.ttf');
 }
 
 /** Youtube header*/
@@ -32,9 +28,12 @@ header{
   background-color: rgb(18, 18, 18);
   border: 1px solid rgb(48,48,48);
   border-radius: 25px 0px 0px 25px;
-  width: 30%;
+  width: 50%;
   height: 35px;
   cursor: text;
+  color: white;
+  padding-left: 10px;
+  font-size: 1.2em;
 }
 #searchButton{
   background-color: rgb(34, 34, 34);
@@ -42,12 +41,43 @@ header{
   border-radius: 0px 25px 25px 0px;
   width: 10%;
   color: white;
-  font-size: 1.5em;
-  font-family: roboto;
+  font-size: 1.2em;
   cursor: pointer;
+}
+#searchButton:hover{
+  background-color: rgb(40, 40, 40);
 }
 
 /** Home file */
-.homeVideos{
-  border: 2px solid red;
+#mainContent{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 30px 150px 10px 150px;
+}
+
+/** Video box*/
+.videoBox{
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+  margin-bottom: 30px;
+}
+.videoImg:hover{
+  cursor: pointer;
+}
+.videoImg{
+  grid-row: 1/2;
+  justify-self: center;
+  width: 360px;
+  height: 202px;
+  border-radius: 15px;
+}
+.videoTitle{
+  grid-row: 2/3;
+  justify-self: center;
+  margin-top: 20px;
+  margin-bottom: 0px;
+  font-weight: bolder;
+}
+.videoTitle:hover{
+  cursor: pointer;
 }
