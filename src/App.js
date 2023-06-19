@@ -1,24 +1,44 @@
 import './App.css';
+import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import {Home} from './Home.js'
 import { Videos } from './Videos';
 import { About } from './About';
+import { WatchVideo } from './WatchVideo';
+
 
 function App() {
+  const [search , setSearch] = useState('')
+  const [key, setKey] = useState()
+  const navigate = useNavigate()
+  const [state, updateState] = React.useState();
+  const forceUpdate = React.useCallback(() => updateState({}), []);
+
+
+
+  function searchVideo(){
+    navigate(`/videos/${document.querySelector('#searchBox').value}`)
+    console.log('clicked searchVideo()')
+    setSearch(search + 1)
+  }
   return (
     <> 
-    <header>
+    <header key={key}>
       <img class="youtube-header" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/YouTube_dark_logo_2017.svg/1280px-YouTube_dark_logo_2017.svg.png"/>
       <form id="searchBoxForm">
         <input
         type="text"
         id="searchBox"
+        onChange={(x) => setSearch(x)}
         />
-        <input
-        type="button"
+        <input 
+        type="button" 
         id="searchButton"
-        value="Search..."
+        class="searchLink"
+        onClick={() => searchVideo()}
         />
       </form>
       <div id="headerButtons">
@@ -35,6 +55,7 @@ function App() {
       <Route path="/videos/:id" element={<Videos/>}/>
       <Route path="/videos/*" element={<Videos/>}/>
       <Route path="/about/" element={<About/>}/>
+      <Route path="/watch/:id" element={<WatchVideo/>}/>
     </Routes>
     </>
   );

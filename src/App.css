@@ -40,9 +40,11 @@ header{
   border: 1px solid rgb(48,48,48);
   border-radius: 0px 25px 25px 0px;
   width: 10%;
+  cursor: pointer;
+}
+#searchLink{
   color: white;
   font-size: 1.2em;
-  cursor: pointer;
 }
 #searchButton:hover{
   background-color: rgb(40, 40, 40);
@@ -80,4 +82,11 @@ header{
 }
 .videoTitle:hover{
   cursor: pointer;
+}
+
+/** Video player*/
+.playVideo{
+  display: flex;
+  justify-content: center;
+  padding-top: 50px;
 }
