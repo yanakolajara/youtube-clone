@@ -37,7 +37,7 @@ function App() {
         <input 
         type="button" 
         id="searchButton"
-        class="searchLink"
+        value="Search..."
         onClick={() => searchVideo()}
         />
       </form>
