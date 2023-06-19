@@ -45,6 +45,7 @@ function App() {
         </button>
       </div>
     </header>
+    {navigate(`/`)}
     <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/videos/:id" element={<Videos/>}/>
