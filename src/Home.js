@@ -1,10 +1,10 @@
-import { useLoaderData } from "react-router-dom"
 import { useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'; //!
 
 export function Home() {
     const [data, setData] = useState([])
     const [isLoading, setIsLoading] = useState(true)
+    const [error, setError] = useState(false)
     const navigate = useNavigate()
     useEffect(() => {
         fetch(`https://youtube.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_API_KEY}&q=&type=video&part=snippet&maxResults=8`)
@@ -12,10 +12,18 @@ export function Home() {
         .then(res => setData(res))
         .then(() => setIsLoading(false))
         .then(() => document.querySelector("#searchBox").value = '')
+        .catch(() => {
+            setError(true)
+        })
     }, [])
     if(isLoading){
         return(
             <p>loading...</p>
+        )
+    }
+    if(error){
+        return(
+            <p>Something went wrong, please try again later.</p>
         )
     }
     return(

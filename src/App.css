@@ -88,3 +88,26 @@ header{
   justify-content: center;
   padding-top: 50px;
 }
+
+/** About */
+#about{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  padding-top: 50px;
+}
+#ynk{
+  width: 100%;
+}
+#aboutBox{
+  padding: 30px 60px 30px 60px;
+  width: 80%;
+  border: 2px solid red;
+}
+#aboutBox h1{
+  margin-bottom: 60px;
+  font-size: 3em;
+}
+#aboutBox p{
+  margin-bottom: 30px;
+  font-size: 1.5em;
+}
