@@ -96,12 +96,12 @@ header{
   padding-top: 50px;
 }
 #ynk{
+  padding-left: 30px;
   width: 100%;
 }
 #aboutBox{
   padding: 30px 60px 30px 60px;
   width: 80%;
-  border: 2px solid red;
 }
 #aboutBox h1{
   margin-bottom: 60px;

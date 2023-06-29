@@ -1,5 +1,5 @@
 import './App.css';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
@@ -13,9 +13,6 @@ import { WatchVideo } from './WatchVideo';
 function App() {
   const [search , setSearch] = useState('')
   const navigate = useNavigate()
-
-
-
   function searchVideo(){
     navigate(`/videos/${document.querySelector('#searchBox').value}`)
   }
@@ -45,7 +42,6 @@ function App() {
         </button>
       </div>
     </header>
-    {navigate(`/`)}
     <Routes>
       <Route path="/" element={<Home/>}/>
       <Route path="/videos/:id" element={<Videos/>}/>
